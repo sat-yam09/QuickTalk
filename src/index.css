@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #000000;
+  --surface-color: #111111;
+  --surface-variant: #1e1e1e;
+  --accent-color: #ffffff;
+  --on-accent-color: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #8e8e93;
+  --text-disabled: #48484a;
+  --error-color: #e5e5ea;
+  --status-ready: #ffffff;
+  --status-off: #48484a;
+  --status-problem: #8e8e93;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --surface-color: #f4f4f5;
+  --surface-variant: #e4e4e7;
+  --accent-color: #09090b;
+  --on-accent-color: #ffffff;
+  --text-primary: #09090b;
+  --text-secondary: #71717a;
+  --text-disabled: #a1a1aa;
+  --error-color: #27272a;
+  --status-ready: #09090b;
+  --status-off: #d4d4d8;
+  --status-problem: #71717a;
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --surface-color: #111111;
+  --surface-variant: #1e1e1e;
+  --accent-color: #ffffff;
+  --on-accent-color: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #8e8e93;
+  --text-disabled: #48484a;
+  --error-color: #e5e5ea;
+  --status-ready: #ffffff;
+  --status-off: #48484a;
+  --status-problem: #8e8e93;
+}
+
+body {
+  font-family: 'Satoshi', 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2s subtle radar pulse without neon glow */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.animate-radar {
+  animation: radarPulse 2s cubic-bezier(0.2, 0, 0.4, 1) infinite;
+}
+
+/* 200ms fade + 8dp slide for screen transitions */
+@keyframes screenTransition {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.screen-enter {
+  animation: screenTransition 200ms ease-out forwards;
+}
+
+/* Hide scrollbars for mobile native feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

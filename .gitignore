@@ -1,0 +1,28 @@
+# Node / Web preview
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Gradle / Android
+.gradle/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+*.iml
+.idea/
+
+# Editors & Tools
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.antigravity/
+.aistudio/
